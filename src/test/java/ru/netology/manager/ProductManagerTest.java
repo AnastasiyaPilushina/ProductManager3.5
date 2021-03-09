@@ -82,6 +82,28 @@ class ProductManagerTest {
         assertArrayEquals(expected, actual);
 
     }
+    @Test
+    public void shouldGetAll() {
+        Product[] expected = new Product[]{first, second,third,forth};
+        Product[] actual = productManager.getAll();
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindBook() {
+
+        Product[] actual = productManager.searchBy("name2");
+        Product[] expected = new Product[]{second};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldFindSmartphone() {
+
+        Product[] actual = productManager.searchBy("name4");
+        Product[] expected = new Product[]{forth};
+        assertArrayEquals(expected, actual);
+    }
 
 
 
